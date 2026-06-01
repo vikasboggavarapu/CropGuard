@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CropGuard — Crop Disease Detection</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="18" fill="#22c55e"/>
+          <path d="M18 8c0 0-8 4-8 12 0 4.4 3.6 8 8 8s8-3.6 8-8c0-8-8-12-8-12z" fill="white" opacity="0.9"/>
+          <path d="M18 14v10M14 18h8" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">CropGuard</span>
+      </div>
+      <p class="header-tagline">AI-Powered Crop Disease Detection</p>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Upload Section -->
+    <section class="upload-section" id="uploadSection">
+      <div class="upload-card">
+        <h1 class="upload-title">Detect Crop Disease Instantly</h1>
+        <p class="upload-subtitle">
+          Upload a photo of a crop leaf to identify the disease and get treatment recommendations.
+          Supports Corn, Potato, Rice, Sugarcane &amp; Wheat.
+        </p>
+
+        <div class="drop-zone" id="dropZone">
+          <div class="drop-icon">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+              <circle cx="28" cy="28" r="28" fill="#f0fdf4"/>
+              <path d="M28 36V20M20 28l8-8 8 8" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18 38h20" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="drop-primary">Drag &amp; drop your leaf image here</p>
+          <p class="drop-secondary">or</p>
+          <label class="btn-upload" for="fileInput">Choose Image</label>
+          <input type="file" id="fileInput" accept="image/*" hidden />
+          <p class="drop-hint">Supports JPG, PNG, WEBP · Max 16 MB</p>
+        </div>
+
+        <div class="crop-badges">
+          <span class="badge">🌽 Corn</span>
+          <span class="badge">🥔 Potato</span>
+          <span class="badge">🌾 Rice</span>
+          <span class="badge">🎋 Sugarcane</span>
+          <span class="badge">🌿 Wheat</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <section class="loading-section hidden" id="loadingSection">
+      <div class="loading-card">
+        <div class="spinner"></div>
+        <h2>Analyzing Leaf…</h2>
+        <p>Our AI model is examining the image for disease patterns</p>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section hidden" id="resultsSection">
+      <div class="results-grid">
+
+        <!-- Left: uploaded image + top-5 -->
+        <div class="results-left">
+          <div class="card image-card">
+            <h3 class="card-title">Uploaded Image</h3>
+            <img id="resultImage" class="result-img" src="" alt="Uploaded leaf" />
+          </div>
+
+          <div class="card top5-card">
+            <h3 class="card-title">Confidence Scores</h3>
+            <div id="top5List"></div>
+          </div>
+        </div>
+
+        <!-- Right: diagnosis -->
+        <div class="results-right">
+          <div class="card diagnosis-card">
+            <div class="diagnosis-header" id="diagnosisHeader">
+              <div class="status-badge" id="statusBadge"></div>
+              <div>
+                <h2 class="disease-name" id="diseaseName"></h2>
+                <p class="crop-name" id="cropName"></p>
+              </div>
+            </div>
+
+            <div class="confidence-bar-wrap">
+              <div class="confidence-label">
+                <span>Confidence</span>
+                <span id="confidenceVal"></span>
+              </div>
+              <div class="confidence-bar-bg">
+                <div class="confidence-bar-fill" id="confidenceFill"></div>
+              </div>
+            </div>
+
+            <div class="severity-row" id="severityRow">
+              <span class="severity-label">Severity:</span>
+              <span class="severity-value" id="severityValue"></span>
+            </div>
+
+            <p class="description" id="description"></p>
+
+            <div id="symptomsBlock" class="info-block">
+              <h4 class="info-title">Symptoms</h4>
+              <ul class="info-list" id="symptomsList"></ul>
+            </div>
+
+            <div class="info-block treatment-block">
+              <h4 class="info-title">Recommended Treatment</h4>
+              <p id="treatmentText"></p>
+            </div>
+
+            <div class="info-block prevention-block">
+              <h4 class="info-title">Prevention</h4>
+              <p id="preventionText"></p>
+            </div>
+          </div>
+
+          <button class="btn-analyze-another" id="analyzeAnotherBtn">
+            ← Analyze Another Image
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Error Section -->
+    <section class="error-section hidden" id="errorSection">
+      <div class="error-card">
+        <div class="error-icon">⚠️</div>
+        <h3>Analysis Failed</h3>
+        <p id="errorMessage"></p>
+        <button class="btn-analyze-another" id="errorRetryBtn">Try Again</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>CropGuard · AI Crop Disease Detection · Powered by EfficientNet-B0</p>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

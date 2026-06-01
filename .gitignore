@@ -1,0 +1,32 @@
+# Dataset — too large for GitHub (~1.5 GB)
+Crop Dataset/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.Python
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env
+
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Uploaded images (runtime)
+src/uploads/
+
+#Models
+models/
