@@ -27,13 +27,6 @@ Disease database lookup (DISEASE_INFO dict)
         v
 JSON response → rendered in browser (index.html)
 ```
-
-##Dataset
-
-You can download the dataset from (https://www.kaggle.com/)
-
----
-
 ## Setup
 
 ### Requirements
