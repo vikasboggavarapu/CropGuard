@@ -30,7 +30,7 @@ JSON response → rendered in browser (index.html)
 
 ##Dataset
 
-You can download the dataset from [Top Agriculture Crop Disease India](https://www.kaggle.com/)
+You can download the dataset from (https://www.kaggle.com/)
 
 ---
 
