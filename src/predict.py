@@ -59,7 +59,7 @@ DISEASE_INFO = {
         "severity": "Moderate",
         "description": "Caused by Alternaria solani fungus. Appears during warm, wet weather and primarily affects older leaves first.",
         "symptoms": ["Dark brown concentric ring lesions (target board pattern)", "Yellow halo around lesions", "Lesions on older leaves first"],
-        "treatment": "Apply chlorothalonil or mancozeb fungicides. Remove infected foliage.",
+        "treatment": "Apply chlorothalonil or mancozeb fungicides. Remove infected foliage.Dosage should be based on severity and growth stage with number of days between applications as per label instructions.",
         "prevention": "Avoid overhead irrigation, ensure crop rotation, use certified seed tubers.",
     },
     "Potato___Healthy": {

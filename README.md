@@ -4,6 +4,16 @@ CropGuard is a deep learning web application that identifies diseases in crop le
 
 ---
 
+## ScreenShots
+
+## HomePage
+![Home Page](screenshots/Home_page.png)
+
+## Analysis
+![Analysis](screenshots/Analysis.png)
+
+---
+
 ## How It Works
 
 ```
