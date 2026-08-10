@@ -37,13 +37,6 @@ Disease database lookup (DISEASE_INFO dict)
         v
 JSON response → rendered in browser (index.html)
 ```
-
-##Dataset
-
-You can download the dataset from [Top Agriculture Crop Disease India](https://www.kaggle.com/)
-
----
-
 ## Setup
 
 ### Requirements
