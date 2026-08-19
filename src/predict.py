@@ -10,7 +10,7 @@ MODEL_DIR = ROOT / "models"
 BEST_MODEL_PATH = MODEL_DIR / "cropguard_best.pth"
 METADATA_PATH = MODEL_DIR / "metadata.json"
 
-# ── Disease information database ──────────────────────────────────────────────
+
 DISEASE_INFO = {
     "Corn___Common_Rust": {
         "display_name": "Corn Common Rust",
