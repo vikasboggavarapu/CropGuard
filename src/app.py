@@ -3,10 +3,8 @@ import uuid
 import base64
 from io import BytesIO
 from pathlib import Path
-
 from flask import Flask, request, jsonify, render_template, abort
 from PIL import Image
-
 from predict import predictor
 
 app = Flask(__name__)
